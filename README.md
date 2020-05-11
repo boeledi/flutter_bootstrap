@@ -2,7 +2,7 @@
 
 A partial implementation of Bootstrap Grid system in Flutter for Responsive Layout.
 
-<img src="https://www.didierboelens.com/images/flutter_bootstrap.gif" width="220" alt="Flutter Bootstrap" />
+![](flutter_bootstrap.gif)
 <br/><br/>
 
 ---
@@ -12,7 +12,7 @@ You should ensure that you add the following dependency in your Flutter project.
 
 ```yaml
 dependencies:
- flutter_bootstrap: "^1.0.0"
+ flutter_bootstrap: "^1.0.0+1"
 ```
 
 You should then run `flutter packages upgrade` or update your packages in IntelliJ.

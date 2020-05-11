@@ -177,7 +177,7 @@ class BootstrapContainer extends StatelessWidget {
 
 ///
 /// Implementation of the Bootstap .row
-/// 
+///
 /// A [BootstapRow] may only contain [BootstapCol] children.
 ///
 class BootstrapRow extends StatelessWidget {
@@ -268,10 +268,10 @@ class BootstrapCol extends StatelessWidget {
   /// Sizes
   ///
   /// Corresponds to the Bootstrap classes: .col-*
-  /// 
+  ///
   /// Defines the dimensions (in terms of number of columns),
   /// depending on the screen width.
-  /// 
+  ///
   /// Example:
   ///   sizes: 'col-12 col-sd-12 col-md-6 col-lg-4 col-xl-4'
   ///
@@ -279,9 +279,9 @@ class BootstrapCol extends StatelessWidget {
 
   ///
   /// Offsets (= number of columns) to push this Widget to the right
-  /// 
+  ///
   /// Corresponds to the Bootstrap classes: .offset-*
-  /// 
+  ///
   /// Example:
   ///   offsets: 'offset-0 offset-sm-1 offset-md-2 offset-lg-3 offset-xl-4'
   ///
@@ -289,9 +289,9 @@ class BootstrapCol extends StatelessWidget {
 
   ///
   /// Sequence orders
-  /// 
+  ///
   /// Corresponds to the Bootstrap classes: .order-*
-  /// 
+  ///
   /// Example:
   ///   orders: 'order-2 order-sm-2 order-md-1 order-lg-1 order-xl-1'
   ///
@@ -299,9 +299,9 @@ class BootstrapCol extends StatelessWidget {
 
   ///
   /// Invisibility
-  /// 
+  ///
   /// If you want to make this instance invisible for extra-small devices, mention the 'xs'
-  /// 
+  ///
   /// Example:
   ///   invisibleForSizes: 'xs xl'
   ///
