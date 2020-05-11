@@ -12,7 +12,7 @@ You should ensure that you add the following dependency in your Flutter project.
 
 ```yaml
 dependencies:
- flutter_bootstrap: "^1.0.0+1"
+ flutter_bootstrap: "^1.0.0+2"
 ```
 
 You should then run `flutter packages upgrade` or update your packages in IntelliJ.

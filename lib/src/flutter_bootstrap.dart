@@ -512,11 +512,6 @@ class BootstrapCol extends StatelessWidget {
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return '$_ratiosPerSize\n$_offsetsPerSize';
-  }
-
-  @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
