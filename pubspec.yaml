@@ -1,0 +1,14 @@
+name: flutter_bootstrap
+description: A partial implementation of Bootstrap Grid system in Flutter for Responsive Layout.
+version: 1.0.0+1
+author: Didier Boelens <mail@didierboelens.com>
+homepage: https://github.com/boeledi/flutter_bootstrap
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
