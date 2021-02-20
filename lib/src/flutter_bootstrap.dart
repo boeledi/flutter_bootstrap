@@ -56,7 +56,7 @@ String bootstrapPrefixBasedOnWidth(double width) {
     return "lg";
   }
 
-  if (width > 768) {
+  if (width > 767) {
     return "md";
   }
 
