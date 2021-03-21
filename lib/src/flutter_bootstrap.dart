@@ -56,7 +56,7 @@ String bootstrapPrefixBasedOnWidth(double width) {
     return "lg";
   }
 
-  if (width > 768) {
+  if (width > 767) {
     return "md";
   }
 
@@ -218,8 +218,11 @@ class BootstrapRow extends StatelessWidget {
         _children.sort((a, b) => a.orderPerSize[pfx] - b.orderPerSize[pfx]);
 
         return Container(
-          width: constraints.maxWidth,
-          height: height,
+          constraints: BoxConstraints(
+            minWidth: constraints.maxWidth,
+            maxWidth: constraints.maxWidth,
+            minHeight: height,
+          ),
           decoration: decoration,
           child: Wrap(
             alignment: WrapAlignment.start,
@@ -623,7 +626,7 @@ class BootstrapVisibility extends StatelessWidget {
     parts.forEach((String part) {
       _prefixes.forEach((pfx) {
         final String prefix = 'col-$pfx';
-        if (part.startsWith(prefix)) {
+        if (part.startsWith(prefix) && pfx != '') {
           _visibilityPerSize[pfx] = true;
         }
       });
