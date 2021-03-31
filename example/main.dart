@@ -244,20 +244,20 @@ class _DemoPageState extends State<DemoPage> {
 
 class ContentWidget extends StatelessWidget {
   const ContentWidget({
-    Key key,
+    Key? key,
     this.text,
     this.color,
   }) : super(key: key);
 
-  final String text;
-  final Color color;
+  final String? text;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
       color: color,
-      child: Text(text),
+      child: Text(text!),
     );
   }
 }
