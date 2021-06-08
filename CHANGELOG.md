@@ -19,3 +19,6 @@
 * Calculation off by 1px (md size) [thanks to gibahjoe]
 * Visibility bug on small size
 
+## [2.0.0]
+
+* Migrated to null-safety [thanks to anisalibegic]

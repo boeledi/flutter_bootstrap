@@ -31,8 +31,7 @@ class _DemoPageState extends State<DemoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('flutter_bootstap Demo',
-            style: TextStyle(color: Colors.black)),
+        title: Text('flutter_bootstrap Demo', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
@@ -126,8 +125,7 @@ class _DemoPageState extends State<DemoPage> {
                     BootstrapCol(
                       sizes: 'col-4',
                       child: ContentWidget(
-                        text:
-                            'col-4\nSince 9+4 = 13 & 13 > 2, this 4-columns gets wrapped onto a new line',
+                        text: 'col-4\nSince 9+4 = 13 & 13 > 2, this 4-columns gets wrapped onto a new line',
                         color: Colors.green,
                       ),
                     ),
@@ -194,8 +192,7 @@ class _DemoPageState extends State<DemoPage> {
                   children: <BootstrapCol>[
                     BootstrapCol(
                       sizes: 'col-12 col-md-8',
-                      orders:
-                          'order-2 order-sm-2 order-md-1 order-lg-1 order-xl-1',
+                      orders: 'order-2 order-sm-2 order-md-1 order-lg-1 order-xl-1',
                       child: ContentWidget(
                         text: 'col-12 col-md-8 order2(xs,sm)',
                         color: Colors.red,
@@ -203,8 +200,7 @@ class _DemoPageState extends State<DemoPage> {
                     ),
                     BootstrapCol(
                       sizes: 'col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3',
-                      orders:
-                          'order-1 order-sm-1 order-md-2 order-lg-2 order-xl-2',
+                      orders: 'order-1 order-sm-1 order-md-2 order-lg-2 order-xl-2',
                       child: ContentWidget(
                         text: 'col 2 order1(xs,sm)',
                         color: Colors.green,
@@ -212,10 +208,8 @@ class _DemoPageState extends State<DemoPage> {
                     ),
                     BootstrapCol(
                       sizes: 'col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3',
-                      offsets:
-                          'offset-0 offset-sm-0 offset-md-2 offset-lg-4 offset-xl-5',
-                      orders:
-                          'order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3',
+                      offsets: 'offset-0 offset-sm-0 offset-md-2 offset-lg-4 offset-xl-5',
+                      orders: 'order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3',
                       child: ContentWidget(
                         text: 'col 3',
                         color: Colors.yellow,
@@ -223,8 +217,7 @@ class _DemoPageState extends State<DemoPage> {
                     ),
                     BootstrapCol(
                       sizes: 'col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3',
-                      orders:
-                          'order-4 order-sm-4 order-md-4 order-lg-4 order-xl-4',
+                      orders: 'order-4 order-sm-4 order-md-4 order-lg-4 order-xl-4',
                       invisibleForSizes: 'sm xl',
                       child: ContentWidget(
                         text: 'invisible for sm and xl',
@@ -244,9 +237,9 @@ class _DemoPageState extends State<DemoPage> {
 
 class ContentWidget extends StatelessWidget {
   const ContentWidget({
-    Key key,
-    this.text,
-    this.color,
+    Key? key,
+    required this.text,
+    required this.color,
   }) : super(key: key);
 
   final String text;
