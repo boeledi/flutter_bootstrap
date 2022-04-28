@@ -1,24 +1,28 @@
-## [1.0.0] - Initial stable release
+## [2.1.0]
 
-* Initial release
- 
-## [1.0.0+1]
+* Added breakpoints customization
 
-* Code formatting
+## [2.0.0]
 
-## [1.0.0+2]
-
-* Warning suppression
-
-## [1.0.1]
-
-* BootstrapRow.height now gives a real "min height"
+* Migrated to null-safety [thanks to anisalibegic]
 
 ## [1.0.2]
 
 * Calculation off by 1px (md size) [thanks to gibahjoe]
 * Visibility bug on small size
 
-## [2.0.0]
+## [1.0.1]
 
-* Migrated to null-safety [thanks to anisalibegic]
+* BootstrapRow.height now gives a real "min height"
+
+## [1.0.0+2]
+
+* Warning suppression
+
+## [1.0.0+1]
+
+* Code formatting
+
+## [1.0.0] - Initial stable release
+
+* Initial release
