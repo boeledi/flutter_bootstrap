@@ -8,6 +8,27 @@ List<String> _prefixesReversed = ['', 'sm', 'md', 'lg', 'xl'];
 double _oneColumnRatio = 0.083333;
 double _gutterSize = 48.0;
 int _numberOfColumns = 12;
+BootstrapGridBreakpoints _breakpoints = const BootstrapGridBreakpoints();
+
+///
+/// Grid breakpoints values
+///
+class BootstrapGridBreakpoints {
+  final double xs;
+  final double sm;
+  final double md;
+  final double lg;
+  final double xl;
+
+  const BootstrapGridBreakpoints({
+    this.xs = 0,
+    this.sm = 575,
+    this.md = 767,
+    this.lg = 992,
+    this.xl = 1200,
+  });
+}
+
 
 ///
 /// Customization of the grid
@@ -15,6 +36,7 @@ int _numberOfColumns = 12;
 void bootstrapGridParameters({
   int numberOfColumns = 12,
   double gutterSize = 24,
+  BootstrapGridBreakpoints breakpoints = const BootstrapGridBreakpoints(),
 }) {
   assert(() {
     if (numberOfColumns < 10 || numberOfColumns > 24) {
@@ -40,6 +62,7 @@ void bootstrapGridParameters({
   _numberOfColumns = numberOfColumns;
   _oneColumnRatio = 1.0 / numberOfColumns;
   _gutterSize = gutterSize;
+  _breakpoints = breakpoints;
 }
 
 ///
@@ -48,19 +71,19 @@ void bootstrapGridParameters({
 String bootstrapPrefixBasedOnWidth(double width) {
   String pfx = "";
 
-  if (width > 1200) {
+  if (width > _breakpoints.xl) {
     return "xl";
   }
 
-  if (width > 992) {
+  if (width > _breakpoints.lg) {
     return "lg";
   }
 
-  if (width > 767) {
+  if (width > _breakpoints.md) {
     return "md";
   }
 
-  if (width > 575) {
+  if (width > _breakpoints.sm) {
     return "sm";
   }
 
@@ -75,16 +98,16 @@ double bootstrapMaxWidthNonFluid(double width) {
   ///
   /// Otherwise, it depends on the available width
   ///
-  if (width >= 1200) {
+  if (width >= _breakpoints.xl) {
     return 1140;
   }
-  if (width >= 992) {
+  if (width >= _breakpoints.lg) {
     return 960;
   }
-  if (width >= 768) {
+  if (width >= _breakpoints.lg + 1) {
     return 720;
   }
-  if (width >= 576) {
+  if (width >= _breakpoints.lg + 1) {
     return 540;
   }
   return width;
