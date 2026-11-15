@@ -8,19 +8,32 @@ A partial implementation of Bootstrap Grid system in Flutter for Responsive Layo
 ---
 ## Getting Started
 
+Requires Flutter 3.47 or later and Dart 3.13 or later. This package and its
+example use the official standalone `material_ui` library.
+
 You should ensure that you add the following dependency in your Flutter project.
 
 ```yaml
 dependencies:
+ material_ui: ^1.11.0
  flutter_bootstrap: "^2.0.0"
 ```
 
-You should then run `flutter packages upgrade` or update your packages in IntelliJ.
+Run `flutter pub get` to resolve dependencies.
 
 In your Dart code, to use it:
 ```dart
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
+import 'package:material_ui/material_ui.dart';
 ```
+
+When upgrading an existing application, replace imports of
+`package:flutter/material.dart` with `package:material_ui/material_ui.dart`.
+See the [official migration guide](https://docs.flutter.dev/release/breaking-changes/material-ui-and-cupertino-ui).
+
+To validate this repository, run `flutter analyze` and `flutter test`. The tests
+cover grid layout, responsive resizing, visibility, and the Material UI example
+at mobile and desktop widths.
 ---
 ## Documentation
 

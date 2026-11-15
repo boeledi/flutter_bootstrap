@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 List<String> _prefixes = ['xl', 'lg', 'md', 'sm', ''];
 List<String> _prefixesReversed = ['', 'sm', 'md', 'lg', 'xl'];
@@ -160,16 +160,10 @@ class BootstrapContainer extends StatelessWidget {
         );
 
         if (padding != null) {
-          widget = Padding(
-            padding: padding!,
-            child: widget,
-          );
+          widget = Padding(padding: padding!, child: widget);
         }
 
-        return Align(
-          alignment: Alignment.topCenter,
-          child: widget,
-        );
+        return Align(alignment: Alignment.topCenter, child: widget);
       },
     );
   }
@@ -181,11 +175,7 @@ class BootstrapContainer extends StatelessWidget {
 /// A [BootstrapRow] may only contain [BootstrapCol] children.
 ///
 class BootstrapRow extends StatelessWidget {
-  BootstrapRow({
-    required this.children,
-    this.decoration,
-    this.height,
-  });
+  BootstrapRow({required this.children, this.decoration, this.height});
 
   ///
   /// Min container height
@@ -215,7 +205,9 @@ class BootstrapRow extends StatelessWidget {
         // We need to iterate through all the children and consider any potential order
         //
         List<BootstrapCol> _children = List.from(children);
-        _children.sort((a, b) => (a.orderPerSize[pfx] ?? 0) - (b.orderPerSize[pfx] ?? 0));
+        _children.sort(
+          (a, b) => (a.orderPerSize[pfx] ?? 0) - (b.orderPerSize[pfx] ?? 0),
+        );
 
         return Container(
           constraints: BoxConstraints(
@@ -247,9 +239,9 @@ class BootstrapCol extends StatelessWidget {
     String offsets = "",
     String orders = "",
     this.invisibleForSizes,
-  })  : this.sizes = sizes.trim(),
-        this.offsets = offsets.trim(),
-        this.orders = orders.trim() {
+  }) : this.sizes = sizes.trim(),
+       this.offsets = offsets.trim(),
+       this.orders = orders.trim() {
     _initialize();
   }
 
@@ -380,7 +372,13 @@ class BootstrapCol extends StatelessWidget {
       //
       // Identification of the defined "dimensions"
       //
-      List<String> parts = referenceArgument.isEmpty ? [] : referenceArgument.toLowerCase().split(' ').where((t) => t.trim().isNotEmpty).toList();
+      List<String> parts = referenceArgument.isEmpty
+          ? []
+          : referenceArgument
+                .toLowerCase()
+                .split(' ')
+                .where((t) => t.trim().isNotEmpty)
+                .toList();
       parts.forEach((String part) {
         _prefixes.forEach((pfx) {
           final String prefix = '$argPrefix-$pfx${pfx == "" ? "" : "-"}';
@@ -478,7 +476,13 @@ class BootstrapCol extends StatelessWidget {
     //
     // Finally, invisibility
     //
-    List<String> parts = (invisibleForSizes ?? "").trim().isEmpty ? [] : invisibleForSizes!.toLowerCase().split(' ').where((t) => t.trim().isNotEmpty).toList();
+    List<String> parts = (invisibleForSizes ?? "").trim().isEmpty
+        ? []
+        : invisibleForSizes!
+              .toLowerCase()
+              .split(' ')
+              .where((t) => t.trim().isNotEmpty)
+              .toList();
     parts.forEach((String pfx) {
       if (['xl', 'lg', 'md', 'sm', 'xs'].contains(pfx)) {
         hiddenPerSize[pfx == 'xs' ? '' : pfx] = true;
@@ -509,7 +513,11 @@ class BootstrapCol extends StatelessWidget {
         //
         // Get the prefix for the definition, based on the available width
         //
-        String pfx = bootstrapPrefixBasedOnWidth(absoluteSizes ? MediaQuery.of(context).size.width : constraints.maxWidth);
+        String pfx = bootstrapPrefixBasedOnWidth(
+          absoluteSizes
+              ? MediaQuery.of(context).size.width
+              : constraints.maxWidth,
+        );
 
         //
         // Check if invisible
@@ -534,13 +542,16 @@ class BootstrapCol extends StatelessWidget {
         Widget widget = Container(
           width: flexRatio * constraints.maxWidth * _oneColumnRatio,
           child: Padding(
-            padding: _gutterSize == 0.0 ? EdgeInsets.zero : EdgeInsets.symmetric(horizontal: _gutterSize / 2),
+            padding: _gutterSize == 0.0
+                ? EdgeInsets.zero
+                : EdgeInsets.symmetric(horizontal: _gutterSize / 2),
             child: child,
           ),
         );
 
         if (leftMarginRatio > 0) {
-          final double leftMargin = constraints.maxWidth * leftMarginRatio * _oneColumnRatio;
+          final double leftMargin =
+              constraints.maxWidth * leftMarginRatio * _oneColumnRatio;
           widget = Padding(
             padding: EdgeInsets.only(left: leftMargin),
             child: widget,
@@ -559,10 +570,8 @@ class BootstrapCol extends StatelessWidget {
 /// defined in [sizes]
 ///
 class BootstrapVisibility extends StatelessWidget {
-  BootstrapVisibility({
-    required this.child,
-    String sizes = "",
-  }) : this.sizes = sizes.trim() {
+  BootstrapVisibility({required this.child, String sizes = ""})
+    : this.sizes = sizes.trim() {
     _initialize();
   }
 
@@ -588,7 +597,7 @@ class BootstrapVisibility extends StatelessWidget {
     'lg': false,
     'md': false,
     'sm': false,
-    '': false,
+    'xs': false,
   };
 
   //
@@ -599,9 +608,15 @@ class BootstrapVisibility extends StatelessWidget {
     //
     // Parsing of the rules
     //
-    List<String> parts = sizes.isEmpty ? [] : sizes.toLowerCase().split(' ').where((t) => t.trim().isNotEmpty).toList();
+    List<String> parts = sizes.isEmpty
+        ? []
+        : sizes
+              .toLowerCase()
+              .split(' ')
+              .where((t) => t.trim().isNotEmpty)
+              .toList();
     parts.forEach((String part) {
-      _prefixes.forEach((pfx) {
+      _visibilityPerSize.keys.forEach((pfx) {
         final String prefix = 'col-$pfx';
         if (part.startsWith(prefix) && pfx != '') {
           _visibilityPerSize[pfx] = true;
